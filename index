@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKG101 Kawaii Study Hub 🎀 - Kotler & Griffin Cheat Sheet</title>
+    
+    <!-- Google Fonts for Cute Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastelPink: '#FFF0F5',
+                        kawaiiPink: '#FFB6C1',
+                        hotKawaii: '#FF69B4',
+                        pastelPurple: '#F3E5F5',
+                        kawaiiPurple: '#D8BFD8',
+                        pastelBlue: '#E0F7FA',
+                        kawaiiBlue: '#87CEFA',
+                        pastelYellow: '#FFFDE7',
+                        kawaiiYellow: '#FFE4B5',
+                        pastelGreen: '#E8F5E9',
+                        kawaiiGreen: '#A8E6CF',
+                    },
+                    fontFamily: {
+                        fredoka: ['Fredoka', 'cursive', 'sans-serif'],
+                        quicksand: ['Quicksand', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'cute': '0 8px 0px 0px rgba(255, 182, 193, 0.6)',
+                        'cute-purple': '0 8px 0px 0px rgba(216, 191, 216, 0.6)',
+                        'cute-blue': '0 8px 0px 0px rgba(135, 206, 250, 0.6)',
+                        'cute-yellow': '0 8px 0px 0px rgba(255, 228, 181, 0.8)',
+                        'cute-green': '0 8px 0px 0px rgba(168, 230, 207, 0.8)',
+                        'card-pop': '0 10px 25px -5px rgba(255, 105, 180, 0.2), 0 8px 10px -6px rgba(255, 105, 180, 0.2)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #FFF9FA;
+            background-image: radial-gradient(#FFB6C1 0.75px, transparent 0.75px), radial-gradient(#FFB6C1 0.75px, #FFF9FA 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+
+        h1, h2, h3, .font-cute {
+            font-family: 'Fredoka', cursive;
+        }
+
+        .bounce-gentle {
+            animation: bounceGentle 2s infinite ease-in-out;
+        }
+
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .wiggle-hover:hover {
+            animation: wiggle 0.4s ease-in-out;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-4deg); }
+            75% { transform: rotate(4deg); }
+        }
+
+        /* Perspective for Flashcard 3D Flip */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF0F5;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FFB6C1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF69B4;
+        }
+    </style>
+</head>
+<body class="text-gray-700 min-h-screen flex flex-col justify-between pb-10">
+
+    <!-- Top Header Banner -->
+    <header class="bg-white/90 backdrop-blur-md border-b-4 border-pink-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+            <!-- Logo / Title -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('cheatsheet')">
+                <div class="w-12 h-12 bg-pink-100 rounded-2xl border-2 border-pink-300 flex items-center justify-center text-2xl shadow-sm bounce-gentle">
+                    🍡
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-pink-500 flex items-center gap-2">
+                        MKG101 Kawaii Hub <span class="text-xs font-normal bg-pink-100 text-pink-600 px-2 py-0.5 rounded-full border border-pink-300">Kotler & Griffin</span>
+                    </h1>
+                    <p class="text-xs text-gray-500 font-medium">Bắt bài Keyword Nửa Anh - Nửa Việt 💯</p>
+                </div>
+            </div>
+
+            <!-- Stats Badge -->
+            <div class="hidden sm:flex items-center gap-3">
+                <div class="bg-pastelYellow border-2 border-yellow-300 px-3 py-1.5 rounded-2xl flex items-center gap-2 text-xs font-bold text-amber-700 shadow-sm">
+                    <span>⭐ Thi 25/7 - 26/7:</span>
+                    <span id="studyStreakBadge" class="bg-amber-200 px-2 py-0.5 rounded-lg text-amber-800">Cố lên Bấy Bì!</span>
+                </div>
+                <div class="bg-purple-100 border-2 border-purple-300 px-3 py-1.5 rounded-2xl flex items-center gap-2 text-xs font-bold text-purple-700 shadow-sm">
+                    <span>🎯 Quiz Score:</span>
+                    <span id="quizScoreBadge" class="bg-purple-200 px-2 py-0.5 rounded-lg text-purple-800">0/0</span>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <nav class="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-1 md:pb-0">
+                <button id="nav-cheatsheet" onclick="switchTab('cheatsheet')" class="flex-1 md:flex-initial px-4 py-2 rounded-2xl font-bold text-sm transition-all duration-200 border-2 bg-pink-400 text-white border-pink-500 shadow-cute">
+                    <i class="fa-solid fa-book-open mr-1"></i> Cheat Sheet
+                </button>
+                <button id="nav-flashcards" onclick="switchTab('flashcards')" class="flex-1 md:flex-initial px-4 py-2 rounded-2xl font-bold text-sm transition-all duration-200 border-2 bg-white text-gray-600 border-gray-200 hover:bg-purple-50">
+                    <i class="fa-solid fa-clone mr-1"></i> Flashcards
+                </button>
+                <button id="nav-quiz" onclick="switchTab('quiz')" class="flex-1 md:flex-initial px-4 py-2 rounded-2xl font-bold text-sm transition-all duration-200 border-2 bg-white text-gray-600 border-gray-200 hover:bg-yellow-50">
+                    <i class="fa-solid fa-gamepad mr-1"></i> Quiz Arena
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-6 w-full flex-grow">
+
+        <!-- Cute Encouragement Banner -->
+        <div class="bg-gradient-to-r from-pink-100 via-purple-100 to-blue-100 border-3 border-pink-300 rounded-3xl p-4 md:p-5 mb-6 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4 relative overflow-hidden">
+            <div class="absolute -right-4 -bottom-4 opacity-20 text-8xl pointer-events-none">🐱</div>
+            <div class="flex items-center gap-4">
+                <div class="text-4xl">🌸</div>
+                <div>
+                    <h2 class="text-lg font-bold text-pink-600 font-cute">Bí Kíp Ôn Môn Marketing & Management 101</h2>
+                    <p class="text-xs md:text-sm text-gray-600">Đầy đủ 100% các chương từ sách <strong>Kotler</strong> (Principles of Marketing) và <strong>Ricky Griffin</strong> (Fundamentals of Management)! Quét keyword là chọn đúng luôn! ✨</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-xs bg-white text-pink-500 font-bold px-3 py-1.5 rounded-xl border border-pink-200 shadow-sm whitespace-nowrap">
+                    🐾 20 Chương Đầy Đủ
+                </span>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- TAB 1: CHEAT SHEET HUB VIEW               -->
+        <!-- ========================================== -->
+        <section id="view-cheatsheet" class="space-y-6">
+            
+            <!-- Search & Filter Bar -->
+            <div class="bg-white p-4 rounded-3xl border-3 border-pink-200 shadow-sm space-y-3">
+                <div class="flex flex-col md:flex-row gap-3">
+                    <!-- Search Input -->
+                    <div class="relative flex-grow">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-pink-400"></i>
+                        <input type="text" id="searchInput" oninput="renderCheatSheet()" placeholder="Tìm keyword tiếng Anh hoặc tiếng Việt (vd: CLV, Maslow, STP, Pricing...)" 
+                               class="w-full pl-11 pr-4 py-2.5 bg-pink-50/50 border-2 border-pink-200 rounded-2xl text-sm focus:outline-none focus:border-pink-400 transition-all">
+                    </div>
+                    
+                    <!-- Part Filter -->
+                    <div class="flex gap-2">
+                        <button onclick="setFilterPart('ALL')" id="filter-ALL" class="px-4 py-2 rounded-2xl text-xs font-bold border-2 border-pink-400 bg-pink-400 text-white shadow-sm transition-all">
+                            Tất Cả
+                        </button>
+                        <button onclick="setFilterPart('KOTLER')" id="filter-KOTLER" class="px-4 py-2 rounded-2xl text-xs font-bold border-2 border-pink-200 bg-pink-50 text-pink-600 hover:bg-pink-100 transition-all">
+                            🟢 Marketing (Kotler)
+                        </button>
+                        <button onclick="setFilterPart('GRIFFIN')" id="filter-GRIFFIN" class="px-4 py-2 rounded-2xl text-xs font-bold border-2 border-purple-200 bg-purple-50 text-purple-600 hover:bg-purple-100 transition-all">
+                            🔵 Management (Griffin)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chapter Quick Navigation Pills -->
+                <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs pt-1 border-t border-pink-100" id="chapterPills">
+                    <!-- Javascript will render chapter pills here -->
+                </div>
+            </div>
+
+            <!-- Content Cards Container -->
+            <div id="cheatSheetContainer" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <!-- Javascript will inject chapter cards here -->
+            </div>
+
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 2: FLASHCARDS VIEW                     -->
+        <!-- ========================================== -->
+        <section id="view-flashcards" class="hidden space-y-6">
+            <div class="max-w-xl mx-auto text-center space-y-4">
+                <div class="flex items-center justify-between">
+                    <span id="flashcardCounter" class="text-xs font-bold bg-pink-100 text-pink-600 px-3 py-1 rounded-full border border-pink-300">
+                        Card 1 / 25
+                    </span>
+                    <button onclick="shuffleFlashcards()" class="text-xs font-bold text-purple-600 hover:text-purple-800 bg-purple-100 px-3 py-1 rounded-full border border-purple-200">
+                        <i class="fa-solid fa-shuffle mr-1"></i> Xáo Bài
+                    </button>
+                </div>
+
+                <!-- 3D Flippable Card -->
+                <div class="perspective-1000 h-80 w-full cursor-pointer" onclick="flipFlashcard()">
+                    <div id="flashcardInner" class="relative w-full h-full duration-500 transform-style-3d shadow-card-pop rounded-3xl border-4 border-pink-300 bg-white">
+                        
+                        <!-- Front Face (Question / Keyword Prompt) -->
+                        <div class="absolute inset-0 w-full h-full backface-hidden p-6 flex flex-col justify-between items-center text-center bg-gradient-to-b from-white to-pink-50 rounded-2xl">
+                            <div class="flex items-center justify-between w-full text-xs font-bold text-pink-400">
+                                <span id="fcChapterTag">CH 7 - MARKETING</span>
+                                <span><i class="fa-solid fa-hand-pointer animate-pulse mr-1"></i> Chạm để lật mặt sau</span>
+                            </div>
+                            
+                            <div class="my-auto space-y-3">
+                                <span class="text-3xl">🎀</span>
+                                <h3 id="fcFrontText" class="text-xl md:text-2xl font-bold text-gray-800 font-cute leading-snug">
+                                    Divide market into smaller groups with distinct needs or behaviors...
+                                </h3>
+                                <p class="text-xs text-pink-500 italic bg-pink-100/60 px-3 py-1 rounded-lg inline-block">
+                                    Keyword trên đề thi sẽ như thế nào? 🤔
+                                </p>
+                            </div>
+
+                            <div class="text-xs text-gray-400 font-medium">
+                                Mặt Trước (English Question Keyword)
+                            </div>
+                        </div>
+
+                        <!-- Back Face (Answer / Concept) -->
+                        <div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 p-6 flex flex-col justify-between items-center text-center bg-gradient-to-b from-purple-50 to-pink-100 rounded-2xl">
+                            <div class="flex items-center justify-between w-full text-xs font-bold text-purple-500">
+                                <span>🎯 ĐÁP ÁN KHOANH CHUẨN</span>
+                                <span>✨ Bắt bài Keyword</span>
+                            </div>
+
+                            <div class="my-auto space-y-2">
+                                <h2 id="fcBackTitle" class="text-2xl md:text-3xl font-extrabold text-purple-700 font-cute">
+                                    Market Segmentation
+                                </h2>
+                                <p id="fcBackDesc" class="text-sm text-gray-700 font-medium px-2">
+                                    Phân đoạn thị trường thành các nhóm nhỏ hơn dựa trên đặc điểm địa lý, nhân khẩu học, tâm lý hoặc hành vi.
+                                </p>
+                            </div>
+
+                            <div class="text-xs text-purple-400 font-medium">
+                                Mặt Sau (Đáp án Tiếng Anh + Giải thích)
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Navigation Controls -->
+                <div class="flex items-center justify-center gap-4 pt-2">
+                    <button onclick="prevFlashcard()" class="w-12 h-12 bg-white border-2 border-pink-300 rounded-2xl shadow-cute flex items-center justify-center text-pink-500 font-bold hover:bg-pink-100 transition-all">
+                        <i class="fa-solid fa-arrow-left text-lg"></i>
+                    </button>
+                    <button onclick="flipFlashcard()" class="px-6 py-3 bg-pink-400 text-white font-bold rounded-2xl shadow-cute border-2 border-pink-500 hover:bg-pink-500 transition-all text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-rotate"></i> Lật Thẻ
+                    </button>
+                    <button onclick="nextFlashcard()" class="w-12 h-12 bg-white border-2 border-pink-300 rounded-2xl shadow-cute flex items-center justify-center text-pink-500 font-bold hover:bg-pink-100 transition-all">
+                        <i class="fa-solid fa-arrow-right text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 3: QUIZ ARENA VIEW                     -->
+        <!-- ========================================== -->
+        <section id="view-quiz" class="hidden space-y-6">
+            <div class="max-w-2xl mx-auto bg-white border-4 border-yellow-200 rounded-3xl p-6 md:p-8 shadow-card-pop relative">
+                
+                <!-- Quiz Header -->
+                <div id="quizHeader" class="flex items-center justify-between border-b-2 border-yellow-100 pb-4 mb-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-xl border border-yellow-300 flex items-center justify-center text-xl">
+                            🐣
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-base font-cute">Luyện Trắc Nghiệm MKG101</h3>
+                            <p class="text-xs text-gray-500">Nhìn Keyword trên Đề $\rightarrow$ Chọn Đúng Đáp Án</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span id="quizQuestionNum" class="text-xs font-bold bg-yellow-100 text-amber-800 px-3 py-1 rounded-full border border-yellow-300">
+                            Câu 1/15
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Quiz Active Area -->
+                <div id="quizActiveArea" class="space-y-6">
+                    <!-- Question Prompt Box -->
+                    <div class="bg-amber-50/70 border-2 border-yellow-200 p-4 md:p-5 rounded-2xl">
+                        <div class="text-xs text-amber-600 font-bold uppercase tracking-wider mb-1" id="quizCatTag">
+                            Marketing - Chapter 7
+                        </div>
+                        <p id="quizQuestionText" class="text-base md:text-lg font-bold text-gray-800 leading-snug font-cute">
+                            "Divide market into smaller groups with distinct needs, characteristics, or behaviors..." - Đây là khái niệm nào?
+                        </p>
+                    </div>
+
+                    <!-- Answers Options List -->
+                    <div id="quizOptionsList" class="space-y-3">
+                        <!-- Rendered via JS -->
+                    </div>
+
+                    <!-- Explanation Box (Appears after answer) -->
+                    <div id="quizExplanation" class="hidden bg-pink-50 border-2 border-pink-200 p-4 rounded-2xl space-y-1">
+                        <div class="flex items-center gap-2 font-bold text-xs text-pink-600" id="quizResultTitle">
+                            <i class="fa-solid fa-circle-check"></i> Chính xác rồi bấy bì!
+                        </div>
+                        <p id="quizExplanationText" class="text-xs text-gray-700">
+                            Giải thích sẽ hiện ở đây nè...
+                        </p>
+                    </div>
+
+                    <!-- Next Question Button -->
+                    <div class="flex justify-end pt-2">
+                        <button id="nextQuizBtn" onclick="nextQuizQuestion()" class="hidden px-6 py-2.5 bg-yellow-400 hover:bg-yellow-500 text-amber-900 font-bold rounded-2xl border-2 border-yellow-500 shadow-cute-yellow text-sm transition-all flex items-center gap-2">
+                            Câu tiếp theo <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Results Area (Hidden by default) -->
+                <div id="quizResultArea" class="hidden text-center py-6 space-y-5">
+                    <div class="text-6xl animate-bounce">🎉</div>
+                    <h2 class="text-2xl font-bold text-gray-800 font-cute">Hoàn Thành Bài Quiz Luyện Tập!</h2>
+                    <p class="text-sm text-gray-600">Bạn đã xuất sắc vượt qua các câu hỏi kiểm tra Keyword!</p>
+                    
+                    <div class="bg-yellow-50 border-2 border-yellow-300 p-5 rounded-2xl max-w-sm mx-auto space-y-2">
+                        <div class="text-xs font-bold text-amber-700 uppercase">Điểm Số Của Bạn</div>
+                        <div id="finalScoreDisplay" class="text-4xl font-extrabold text-amber-600 font-cute">15 / 15</div>
+                        <p id="finalComment" class="text-xs text-amber-800 font-medium">Bái phục! Bắt bài đỉnh thế này thì thi MKG101 10 điểm chắc luôn!</p>
+                    </div>
+
+                    <div class="flex justify-center gap-3 pt-2">
+                        <button onclick="restartQuiz()" class="px-6 py-3 bg-pink-400 hover:bg-pink-500 text-white font-bold rounded-2xl border-2 border-pink-500 shadow-cute text-sm transition-all">
+                            <i class="fa-solid fa-rotate-right mr-1"></i> Làm Lại Quiz
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-10 py-4 text-center text-xs text-gray-400 border-t border-pink-100">
+        <p class="font-medium">MKG101 Kawaii Study Companion ✨ Kotler & Ricky Griffin Synthesis</p>
+        <p class="mt-0.5">Chúc bấy bì thi đạt điểm A+ tuyệt đối nhé! 💖</p>
+    </footer>
+
+    <script>
+        /* ========================================================================== */
+        /* 1. DATA STORE - FULL SYLLABUS CHAPTERS & KEYWORDS (KOTLER & GRIFFIN)       */
+        /* ========================================================================== */
+        const syllabusData = [
+            // PART 1: KOTLER - PRINCIPLES OF MARKETING
+            {
+                id: 'ch1',
+                part: 'KOTLER',
+                chapterNum: 1,
+                title: 'Chapter 1: Value & Engagement',
+                icon: '🌱',
+                topics: [
+                    {
+                        name: 'Nhu cầu (Needs vs. Wants vs. Demands)',
+                        summary: 'Phân biệt 3 cấp độ nhu cầu người tiêu dùng.',
+                        keywords: [
+                            { en: 'Basic human requirements (Food, water, clothing)', vi: 'Needs (Nhu cầu cơ bản)' },
+                            { en: 'Shaped by culture & individual personality', vi: 'Wants (Mong muốn định hình bởi văn hóa)' },
+                            { en: 'Wants backed by buying power (Có tiền trả)', vi: 'Demands (Cầu - Mong muốn có sức mua)' }
+                        ]
+                    },
+                    {
+                        name: 'Giá trị vòng đời & Tài sản khách hàng',
+                        summary: 'Đo lường giá trị dài hạn của khách hàng mang lại cho doanh nghiệp.',
+                        keywords: [
+                            { en: 'Entire stream of purchases over a lifetime of patronage', vi: 'Customer Lifetime Value (CLV)' },
+                            { en: 'Combined customer lifetime values of all current & potential customers', vi: 'Customer Equity (Tài sản khách hàng)' }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'ch4',
+                part: 'KOTLER',
+                chapterNum: 4,
+                title: 'Chapter 4: Marketing Research',
+                icon: '🔍',
+                topics: [
+                    {
+                        name: 'Dữ liệu Nghiên cứu (Data Types)',
+                        summary: 'Sự khác biệt giữa dữ liệu sơ cấp và thứ cấp.',
+                        keywords: [
+                            { en: 'Information collected for the specific purpose at hand (Thu thập mới)', vi: 'Primary Data (Dữ liệu sơ cấp)' },
+                            { en: 'Information that already exists somewhere, collected for another purpose', vi: 'Secondary Data (Dữ liệu thứ cấp)' }
+                        ]
+                    },
+                    {
+                        name: 'Phương pháp Nghiên cứu (Research Approaches)',
+                        summary: 'Các phương pháp thu thập dữ liệu sơ cấp.',
+                        keywords: [
+                            { en: 'Observing relevant people, actions, and situations', vi: 'Observational Research (Quan sát)' },
+                            { en: 'Best for descriptive info, asking people directly', vi: 'Survey Research (Khảo sát/Phát phiếu)' },
+                            { en: 'Best for causal information, cause-and-effect relationships', vi: 'Experimental Research (Thực nghiệm)' }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'ch7',
+                part: 'KOTLER',
+                chapterNum: 7,
+                title: 'Chapter 7: STP Strategy',
+                icon: '🎯',
+                topics: [
+                    {
+                        name: '3 Bước Chiến Lược STP',
+                        summary: 'Phân đoạn, Chọn thị trường mục tiêu & Định vị.',
+                        keywords: [
+                            { en: 'Divide market into smaller groups with distinct needs/behaviors', vi: 'Market Segmentation (Phân đoạn thị trường)' },
+                            { en: 'Evaluate segments, select one or more segments to enter', vi: 'Market Targeting (Chọn thị trường mục tiêu)' },
+                            { en: 'Clear, distinctive, desirable place in target mind relative to competitors', vi: 'Positioning (Định vị thương hiệu)' }
+                        ]
+                    },
+                    {
+                        name: 'Chiến Lược Thị Trường Mục Tiêu',
+                        summary: 'Mức độ phủ sóng thị trường.',
+                        keywords: [
+                            { en: 'Ignore market differences, target whole market with one offer', vi: 'Undifferentiated / Mass Marketing' },
+                            { en: 'Go after a large share of one or a few smaller niches', vi: 'Concentrated / Niche Marketing' }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'ch8_9',
+                part: 'KOTLER',
+                chapterNum: '8 & 9',
+                title: 'Chapter 8 & 9: Product & Services & PLC',
+                icon: '📦',
+                topics: [
+                    {
+                        name: 'Phân loại Sản phẩm Tiêu dùng',
+                        summary: '4 loại sản phẩm người tiêu dùng mua.',
+                        keywords: [
+                            { en: 'Buy frequently, immediately, with minimal comparison/effort (Snacks, Soap)', vi: 'Convenience Product (Thường nhật)' },
+                            { en: 'Compare quality, price, style across stores (Furniture, Clothing)', vi: 'Shopping Product (Mua sắm)' },
+                            { en: 'Unique characteristics, brand identification, high effort (Rolex, Ferrari)', vi: 'Specialty Product (Đặc biệt)' },
+                            { en: 'Consumer does not know or normally think of buying (Life insurance)', vi: 'Unsought Product (Thụ động)' }
+                        ]
+                    },
+                    {
+                        name: '4 Đặc tính của Dịch vụ (4 Service Characteristics)',
+                        summary: 'Đặc trưng riêng biệt của dịch vụ.',
+                        keywords: [
+                            { en: 'Cannot be seen, tasted, felt, heard before purchase', vi: 'Intangibility (Vô hình)' },
+                            { en: 'Produced and consumed at the same time', vi: 'Inseparability (Không thể tách rời)' },
+                            { en: 'Quality depends on who provides, when, where, and how', vi: 'Variability (Không đồng nhất)' },
+                            { en: 'Cannot be stored for later sale or use', vi: 'Perishability (Dễ mất đi/Không lưu kho)' }
+                        ]
+                    },
+                    {
+                        name: 'Chu kỳ sống Sản phẩm (Product Life Cycle - PLC)',
+                        summary: '4 giai đoạn phát triển của sản phẩm.',
+                        keywords: [
+                            { en: 'Low sales, high cost per customer, negative profits, create awareness', vi: 'Introduction Stage (Khởi đầu)' },
+                            { en: 'Rapidly rising sales, rising profits, add new features/models', vi: 'Growth Stage (Tăng trưởng)' },
+                            { en: 'Peak sales, maximum profit, high competition, defend market share', vi: 'Maturity Stage (Bão hòa)' },
+                            { en: 'Falling sales, declining profits, harvest or drop product', vi: 'Decline Stage (Suy ngoái)' }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'ch10_11',
+                part: 'KOTLER',
+                chapterNum: '10 & 11',
+                title: 'Chapter 10 & 11: Pricing Strategies',
+                icon: '💵',
+                topics: [
+                    {
+                        name: 'Chiến Lược Định Giá Sản Phẩm Mới',
+                        summary: 'Hớt bọt hay Thâm nhập thị trường.',
+                        keywords: [
+                            { en: 'Set high initial price to "skim" maximum revenues layer by layer', vi: 'Market-Skimming Pricing (Định giá hớt bọt)' },
+                            { en: 'Set low initial price to penetrate market quickly and deeply', vi: 'Market-Penetration Pricing (Định giá thâm nhập)' }
+                        ]
+                    },
+                    {
+                        name: 'Chiến Lược Điều Chỉnh Giá Cơ Bản',
+                        summary: 'Định giá theo tập hợp sản phẩm & tâm lý.',
+                        keywords: [
+                            { en: 'Pricing main product low, accessory/captive supplies high (Printer ink, Razor)', vi: 'Captive-Product Pricing (Sản phẩm bắt buộc)' },
+                            { en: 'Combine several products and offer bundle at reduced price (Combo KFC)', vi: 'Product Bundle Pricing (Định giá gộp/Combo)' },
+                            { en: 'Based on buyer perception of value rather than seller cost', vi: 'Value-Based Pricing (Dựa trên giá trị)' },
+                            { en: 'Adjust price for psychological effect, e.g., $9.99 instead of $10', vi: 'Psychological Pricing (Tâm lý)' }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'ch12',
+                part: 'KOTLER',
+                chapterNum: 12,
+                title: 'Chapter 12: Channels & Logistics',
+                icon: '🚚',
+                topics: [
+                    {
+                        name: 'Cấu trúc Kênh & Xung đột Kênh',
+                        summary: 'Kênh trực tiếp & Xung đột giữa các trung gian.',
+                        keywords: [
+                            { en: 'No intermediary levels, company sells directly to consumers', vi: 'Direct Marketing Channel (Kênh trực tiếp)' },
+                            { en: 'Conflict among firms at the SAME level of the channel (Đại lý A vs B)', vi: 'Horizontal Conflict (Xung đột ngang)' },
+                            { en: 'Conflict between DIFFERENT levels of the same channel (Nhà SX vs Đại lý)', vi: 'Vertical Conflict (Xung đột dọc)' },
+                            { en: 'Producers, wholesalers, retailers act as a unified system (Franchise)', vi: 'Vertical Marketing System (VMS)' }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'ch14',
+                part: 'KOTLER',
+                chapterNum: 14,
+                title: 'Chapter 14: Integrated Marketing Communications (IMC)',
+                icon: '📢',
+                topics: [
+                    {
+                        name: 'Truyền thông Marketing Tích hợp & Đẩy/Kéo',
+                        summary: 'IMC & Công cụ xúc tiến.',
+                        keywords: [
+                            { en: 'Carefully integrating communication channels to deliver clear, consistent message', vi: 'IMC (Truyền thông tích hợp)' },
+                            { en: 'Push product through marketing channels to final consumers (B2B, Salesperson)', vi: 'Push Strategy (Chiến lược Đẩy)' },
+                            { en: 'Direct marketing activities toward consumers to induce them to buy (Ads)', vi: 'Pull Strategy (Chiến lược Kéo)' },
+                            { en: 'Any paid form of nonpersonal presentation by identified sponsor', vi: 'Advertising (Quảng cáo)' },
+                            { en: 'Short-term incentives to encourage purchase (Coupons, Discounts)', vi: 'Sales Promotion (Xúc tiến bán)' },
+                            { en: 'Building good relations with public, favorable publicity, press release', vi: 'Public Relations (PR)' }
+                        ]
+                    }
+                ]
+            },
+
+            // PART 2: RICKY GRIFFIN - FUNDAMENTALS OF MANAGEMENT
+            {
+                id: 'mgt_ch1',
+                part: 'GRIFFIN',
+                chapterNum: 1,
+                title: 'Chapter 1: Management Job & Perspectives',
+                icon: '🏛️',
+                topics: [
+                    {
+                        name: '4 Chức Năng Quản Trị (4 Management Functions)',
+                        summary: 'Nền tảng công việc của nhà quản trị.',
+                        keywords: [
+                            { en: 'Setting goals and deciding how best to achieve them', vi: 'Planning (Lập kế hoạch)' },
+                            { en: 'Group activities, allocating resources, organizing structure', vi: 'Organizing (Tổ chức)' },
+                            { en: 'Motivating, guiding, and influencing people toward goals', vi: 'Leading (Lãnh đạo)' },
+                            { en: 'Monitoring performance and taking corrective actions', vi: 'Controlling (Kiểm tra/Kiểm soát)' }
+                        ]
+                    },
+                    {
+                        name: 'Thuyết Hệ Thống (Systems Perspective)',
+                        summary: 'Tổ chức là một hệ thống các phần tử tương tác.',
+                        keywords: [
+                            { en: 'Resources: Material, Human, Financial, Information', vi: 'Inputs (Đầu vào)' },
+                            { en: 'Technology, operating systems, administrative activities', vi: 'Transformation Process (Quá trình biến đổi)' },
+                            { en: 'Products, services, profits, employee satisfaction', vi: 'Outputs (Đầu ra)' },
+                            { en: 'Organizational units working together produce more than working alone (1+1 > 2)', vi: 'Synergy (Cộng hưởng)' },
+                            { en: 'Normal process leading to system decline or degeneration if no adaptation', vi: 'Entropy (Sự suy thoái hệ thống)' }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'mgt_ch6',
+                part: 'GRIFFIN',
+                chapterNum: '3 & 6',
+                title: 'Chapter 3 & 6: Strategy & Org Structure',
+                icon: '📐',
+                topics: [
+                    {
+                        name: 'Cấu Trúc Tổ Chức (Organization Design)',
+                        summary: 'Phân công công việc và quyền hạn.',
+                        keywords: [
+                            { en: 'Degree to which overall task is broken down into smaller component parts', vi: 'Job Specialization (Chuyên môn hóa)' },
+                            { en: 'Clear and unbroken line of authority from top to bottom', vi: 'Chain of Command (Chuỗi mệnh lệnh)' },
+                            { en: 'Number of subordinates who report directly to a supervisor', vi: 'Span of Control / Management' },
+                            { en: 'Narrow span of control, many hierarchical levels', vi: 'Tall Structure (Cấu trúc cao)' },
+                            { en: 'Wide span of control, few hierarchical levels', vi: 'Flat Structure (Cấu trúc phẳng)' },
+                            { en: 'Systematically retaining power and authority at higher levels', vi: 'Centralization (Tập trung quyền lực)' },
+                            { en: 'Delegating power and authority down to lower levels', vi: 'Decentralization (Phân quyền)' }
+                        ]
+                    },
+                    {
+                        name: 'Ma Trận BCG (BCG Matrix)',
+                        summary: 'Phân loại đơn vị kinh doanh chiến lược (SBU).',
+                        keywords: [
+                            { en: 'High market growth rate + High relative market share', vi: 'Star (Ngôi sao ⭐)' },
+                            { en: 'Low market growth rate + High relative market share (Cash generator)', vi: 'Cash Cow (Bò sữa 🐄)' },
+                            { en: 'High market growth rate + Low relative market share', vi: 'Question Mark (Dấu hỏi ❓)' },
+                            { en: 'Low market growth rate + Low relative market share', vi: 'Dog (Con chó 🐶)' }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'mgt_ch10',
+                part: 'GRIFFIN',
+                chapterNum: 10,
+                title: 'Chapter 10: Motivation in Organizations',
+                icon: '🔥',
+                topics: [
+                    {
+                        name: 'Tháp Nhu Cầu Maslow (Maslow Hierarchy of Needs)',
+                        summary: '5 tầng nhu cầu tạo động lực.',
+                        keywords: [
+                            { en: 'Food, water, basic salary, comfortable environment', vi: 'Physiological Need (Sinh lý)' },
+                            { en: 'Job security, safe working conditions, health insurance', vi: 'Safety Need (An toàn)' },
+                            { en: 'Friendship, teamwork, acceptance, sense of belonging', vi: 'Social / Belongingness Need (Xã hội)' },
+                            { en: 'Status, recognition, respect, job titles, promotion', vi: 'Esteem Need (Tự trọng/Tôn trọng)' },
+                            { en: 'Achieving full potential, creative autonomy, personal growth', vi: 'Self-Actualization Need (Thể hiện bản thân)' }
+                        ]
+                    },
+                    {
+                        name: 'Các Thuyết Động Lực Tiến Trình (Process Theories)',
+                        summary: 'Thuyết Kỳ Vọng & Thuyết Công Bằng.',
+                        keywords: [
+                            { en: 'Motivation depends on belief that effort leads to performance and reward', vi: 'Expectancy Theory (Thuyết Kỳ Vọng)' },
+                            { en: 'People compare their input/outcome ratio with reference others', vi: 'Equity Theory (Thuyết Công Bằng)' }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'mgt_ch11',
+                part: 'GRIFFIN',
+                chapterNum: 11,
+                title: 'Chapter 11: Leadership & Power',
+                icon: '👑',
+                topics: [
+                    {
+                        name: 'Phong Cách Lãnh Đạo (Leadership Styles)',
+                        summary: '3 phong cách quản lý nhân viên.',
+                        keywords: [
+                            { en: 'Dictates all work methods, makes central decisions, limits worker participation', vi: 'Autocratic Leadership (Độc đoán)' },
+                            { en: 'Involves employees in decision-making, delegates authority, encourages teamwork', vi: 'Democratic Leadership (Dân chủ)' },
+                            { en: 'Gives group complete freedom to make decisions and complete work', vi: 'Laissez-faire Leadership (Tự do/Thả rông)' }
+                        ]
+                    },
+                    {
+                        name: '5 Nguồn Quyền Lực (5 Sources of Power)',
+                        summary: 'Quyền lực bắt nguồn từ đâu trong tổ chức.',
+                        keywords: [
+                            { en: 'Power granted through formal position or official title', vi: 'Legitimate Power (Chính đáng/Địa vị)' },
+                            { en: 'Power to give pay raises, bonuses, promotions, praise', vi: 'Reward Power (Khen thưởng)' },
+                            { en: 'Power to punish, demote, fire, force compliance', vi: 'Coercive Power (Cưỡng chế/Trừng phạt)' },
+                            { en: 'Power derived from special expertise, skill, or technical knowledge', vi: 'Expert Power (Chuyên gia)' },
+                            { en: 'Power based on charisma, admiration, personal liking, respect', vi: 'Referent Power (Tham chiếu/Sức hút)' }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'mgt_ch14',
+                part: 'GRIFFIN',
+                chapterNum: 14,
+                title: 'Chapter 14: Basic Elements of Control',
+                icon: '⚡',
+                topics: [
+                    {
+                        name: 'Quy Trình Kiểm Soát (4 Control Process Steps)',
+                        summary: '4 bước thực hiện kiểm soát trong quản trị.',
+                        keywords: [
+                            { en: '1. Establish standards -> 2. Measure performance -> 3. Compare performance against standards -> 4. Determine need for corrective action', vi: 'Quy trình 4 bước Kiểm Soát chuẩn' }
+                        ]
+                    },
+                    {
+                        name: '3 Thời Điểm Kiểm Soát (Types of Operations Control)',
+                        summary: 'Kiểm soát Đầu vào - Quá trình - Đầu ra.',
+                        keywords: [
+                            { en: 'Attempts to monitor inputs BEFORE operations process begins', vi: 'Preliminary / Feedforward Control (Trước)' },
+                            { en: 'Monitors ongoing transformation process DURING operation', vi: 'Concurrent Control (Trong khi làm)' },
+                            { en: 'Monitors outputs AFTER transformation process is completed', vi: 'Post-action / Feedback Control (Sau)' }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        /* ========================================================================== */
+        /* 2. QUIZ QUESTION BANK (EXAM-ORIENTED KEYWORD MATCHES)                     */
+        /* ========================================================================== */
+        const quizBank = [
+            {
+                category: 'Kotler - Chapter 7: STP',
+                question: 'Trong đề thi xuất hiện câu: "Dividing a market into smaller distinct groups of buyers with different needs, characteristics, or behaviors" - Đây là bước nào?',
+                options: ['Market Targeting', 'Market Segmentation', 'Positioning', 'Mass Marketing'],
+                correct: 1,
+                explanation: 'Keyword "Dividing market into smaller groups" chính là Market Segmentation (Phân đoạn thị trường)!'
+            },
+            {
+                category: 'Kotler - Chapter 10: Pricing',
+                question: 'Keyword: "Setting a high initial price to skim maximum revenues layer by layer from segments willing to pay..." thuộc chiến lược giá nào?',
+                options: ['Market-Penetration Pricing', 'Market-Skimming Pricing', 'Captive-Product Pricing', 'Bundle Pricing'],
+                correct: 1,
+                explanation: 'Hớt bọt giá cao ban đầu = Market-Skimming Pricing!'
+            },
+            {
+                category: 'Kotler - Chapter 8: Services',
+                question: 'Đặc tính dịch vụ được mô tả bằng từ khóa: "Services cannot be seen, tasted, felt, heard, or smelled before purchase"?',
+                options: ['Inseparability', 'Variability', 'Perishability', 'Intangibility'],
+                correct: 3,
+                explanation: 'Không nhìn, nếm, sờ được trước khi mua = Intangibility (Tính vô hình của dịch vụ)!'
+            },
+            {
+                category: 'Kotler - Chapter 1: Basic Concept',
+                question: 'Khái niệm chỉ: "The entire stream of purchases that the customer would make over a lifetime of patronage" là gì?',
+                options: ['Customer Equity', 'Customer Lifetime Value (CLV)', 'Share of Customer', 'Brand Equity'],
+                correct: 1,
+                explanation: 'Toàn bộ dòng tiền tích lũy khách mua trong cả đời họ = Customer Lifetime Value (CLV)!'
+            },
+            {
+                category: 'Griffin - Chapter 1: Systems Theory',
+                question: 'Trong Thuyết Hệ Thống, hiện tượng "Organizational units working together to produce more than working alone (1+1 > 2)" được gọi là gì?',
+                options: ['Entropy', 'Synergy', 'Transformation', 'Feedback'],
+                correct: 1,
+                explanation: 'Cùng nhau tạo ra giá trị lớn hơn làm riêng lẻ (1+1 > 2) = Synergy (Cộng hưởng)!'
+            },
+            {
+                category: 'Griffin - Chapter 11: Power',
+                question: 'Nguồn quyền lực có được từ "Formal position or official job title in organizational hierarchy" là gì?',
+                options: ['Reward Power', 'Coercive Power', 'Legitimate Power', 'Referent Power'],
+                correct: 2,
+                explanation: 'Quyền lực đến từ chức vụ chính thức = Legitimate Power (Quyền lực chính đáng)!'
+            },
+            {
+                category: 'Griffin - Chapter 3: Strategy',
+                question: 'SBU nằm trong Ma trận BCG có "High market growth rate + High relative market share" được gọi là gì?',
+                options: ['Cash Cow 🐄', 'Question Mark ❓', 'Dog 🐶', 'Star ⭐'],
+                correct: 3,
+                explanation: 'Tăng trưởng cao + Thị phần cao = Star (Ngôi sao ⭐)!'
+            },
+            {
+                category: 'Griffin - Chapter 14: Control',
+                question: 'Loại hình kiểm soát "Attempts to monitor inputs BEFORE transformation process begins" được gọi là gì?',
+                options: ['Concurrent Control', 'Preliminary / Feedforward Control', 'Post-action Control', 'Feedback Control'],
+                correct: 1,
+                explanation: 'Kiểm soát TRƯỚC khi quá trình diễn ra = Preliminary / Feedforward Control!'
+            },
+            {
+                category: 'Kotler - Chapter 11: Pricing',
+                question: 'Định giá máy in thật rẻ nhưng bán hộp mực giá rất đắt (Printer & Ink) là ví dụ điển hình cho chiến lược giá nào?',
+                options: ['Product Bundle Pricing', 'Captive-Product Pricing', 'Psychological Pricing', 'Discount Pricing'],
+                correct: 1,
+                explanation: 'Định giá sản phẩm chính rẻ, phụ kiện bắt buộc đắt = Captive-Product Pricing!'
+            },
+            {
+                category: 'Kotler - Chapter 12: Channels',
+                question: 'Xung đột diễn ra giữa "Firms at the SAME level of the distribution channel" (ví dụ giữa đại lý A và đại lý B) gọi là gì?',
+                options: ['Vertical Conflict', 'Horizontal Conflict', 'Channel Partnering', 'VMS Conflict'],
+                correct: 1,
+                explanation: 'Xung đột giữa các đơn vị CÙNG CẤP = Horizontal Conflict (Xung đột ngang)!'
+            },
+            {
+                category: 'Griffin - Chapter 6: Structure',
+                question: 'Khái niệm "Number of subordinates who report directly to a supervisor" trong cấu trúc tổ chức là gì?',
+                options: ['Chain of Command', 'Span of Control / Management', 'Job Specialization', 'Decentralization'],
+                correct: 1,
+                explanation: 'Số lượng nhân viên dưới quyền sếp trực tiếp = Span of Control (Tầm hạn quản trị)!'
+            },
+            {
+                category: 'Griffin - Chapter 10: Motivation',
+                question: 'Thuyết động lực dựa trên sự so sánh: "Employees compare their input-outcome ratio with reference others" là thuyết nào?',
+                options: ['Maslow Hierarchy', 'Expectancy Theory', 'Equity Theory', 'Two-Factor Theory'],
+                correct: 2,
+                explanation: 'So sánh tỷ lệ Đầu vào / Kết quả với người khác = Equity Theory (Thuyết Công Bằng)!'
+            },
+            {
+                category: 'Griffin - Chapter 11: Leadership',
+                question: 'Sếp "Gives group complete freedom to make decisions and finish work" là thuộc phong cách lãnh đạo nào?',
+                options: ['Autocratic Leadership', 'Democratic Leadership', 'Laissez-faire Leadership', 'Transformational Leadership'],
+                correct: 2,
+                explanation: 'Thả rông, cho nhân viên tự do hoàn toàn = Laissez-faire Leadership!'
+            },
+            {
+                category: 'Kotler - Chapter 14: Promotion',
+                question: 'Công cụ truyền thông bao gồm "Short-term incentives to encourage purchase or sale of product" (Coupons, BOGO) là gì?',
+                options: ['Advertising', 'Public Relations (PR)', 'Sales Promotion', 'Personal Selling'],
+                correct: 2,
+                explanation: 'Xúc tiến ngắn hạn khuyến khích mua ngay = Sales Promotion (Khuyến mãi / Xúc tiến bán)!'
+            },
+            {
+                category: 'Griffin - Chapter 10: Maslow',
+                question: 'Nhu cầu liên quan đến "Job security, safe environment, and health insurance" thuộc tầng nào trong Tháp Maslow?',
+                options: ['Physiological Need', 'Safety Need', 'Social Need', 'Esteem Need'],
+                correct: 1,
+                explanation: 'An toàn công việc, môi trường không nguy hiểm = Safety Need (Nhu cầu An toàn)!'
+            }
+        ];
+
+        /* ========================================================================== */
+        /* 3. APPLICATION STATE & SOUND SYNTHESIZER                                  */
+        /* ========================================================================== */
+        let activeTab = 'cheatsheet';
+        let currentPartFilter = 'ALL';
+        
+        // Flashcard State
+        let flashcardDeck = [];
+        let currentFcIndex = 0;
+        let isFcFlipped = false;
+
+        // Quiz State
+        let currentQuizIndex = 0;
+        let quizScore = 0;
+        let selectedOption = null;
+
+        // Web Audio API Synth for Kawaii Sound Effects
+        function playCuteSound(type) {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+
+                if (type === 'correct') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
+                    osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.2); // A5
+                    gain.gain.setValueAtTime(0.2, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.3);
+                } else if (type === 'wrong') {
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(220, ctx.currentTime); // A3
+                    osc.frequency.setValueAtTime(164.81, ctx.currentTime + 0.15); // E3
+                    gain.gain.setValueAtTime(0.2, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.3);
+                } else if (type === 'flip') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(400, ctx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(600, ctx.currentTime + 0.1);
+                    gain.gain.setValueAtTime(0.1, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.1);
+                }
+            } catch (e) {
+                // Audio Context might be blocked before interaction, ignore gracefully
+            }
+        }
+
+        /* ========================================================================== */
+        /* 4. TAB SWITCHING LOGIC                                                    */
+        /* ========================================================================== */
+        function switchTab(tabName) {
+            activeTab = tabName;
+            
+            // Hide all views
+            document.getElementById('view-cheatsheet').classList.add('hidden');
+            document.getElementById('view-flashcards').classList.add('hidden');
+            document.getElementById('view-quiz').classList.add('hidden');
+
+            // Reset navigation button styles
+            const navs = ['cheatsheet', 'flashcards', 'quiz'];
+            navs.forEach(n => {
+                const btn = document.getElementById(`nav-${n}`);
+                if (n === tabName) {
+                    btn.className = "flex-1 md:flex-initial px-4 py-2 rounded-2xl font-bold text-sm transition-all duration-200 border-2 bg-pink-400 text-white border-pink-500 shadow-cute";
+                } else {
+                    btn.className = "flex-1 md:flex-initial px-4 py-2 rounded-2xl font-bold text-sm transition-all duration-200 border-2 bg-white text-gray-600 border-gray-200 hover:bg-pink-50";
+                }
+            });
+
+            // Show selected view
+            if (tabName === 'cheatsheet') {
+                document.getElementById('view-cheatsheet').classList.remove('hidden');
+            } else if (tabName === 'flashcards') {
+                document.getElementById('view-flashcards').classList.remove('hidden');
+                initFlashcards();
+            } else if (tabName === 'quiz') {
+                document.getElementById('view-quiz').classList.remove('hidden');
+            }
+        }
+
+        /* ========================================================================== */
+        /* 5. CHEAT SHEET RENDERER                                                   */
+        /* ========================================================================== */
+        function setFilterPart(part) {
+            currentPartFilter = part;
+            
+            // Update filter buttons UI
+            ['ALL', 'KOTLER', 'GRIFFIN'].forEach(p => {
+                const btn = document.getElementById(`filter-${p}`);
+                if (p === part) {
+                    btn.className = p === 'KOTLER' ? "px-4 py-2 rounded-2xl text-xs font-bold border-2 border-pink-500 bg-pink-500 text-white shadow-sm transition-all" :
+                                    p === 'GRIFFIN' ? "px-4 py-2 rounded-2xl text-xs font-bold border-2 border-purple-500 bg-purple-500 text-white shadow-sm transition-all" :
+                                    "px-4 py-2 rounded-2xl text-xs font-bold border-2 border-pink-400 bg-pink-400 text-white shadow-sm transition-all";
+                } else {
+                    btn.className = p === 'KOTLER' ? "px-4 py-2 rounded-2xl text-xs font-bold border-2 border-pink-200 bg-pink-50 text-pink-600 hover:bg-pink-100 transition-all" :
+                                    p === 'GRIFFIN' ? "px-4 py-2 rounded-2xl text-xs font-bold border-2 border-purple-200 bg-purple-50 text-purple-600 hover:bg-purple-100 transition-all" :
+                                    "px-4 py-2 rounded-2xl text-xs font-bold border-2 border-gray-200 bg-gray-50 text-gray-600 hover:bg-gray-100 transition-all";
+                }
+            });
+
+            renderCheatSheet();
+        }
+
+        function renderCheatSheet() {
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
+            const container = document.getElementById('cheatSheetContainer');
+            container.innerHTML = '';
+
+            let filteredSyllabus = syllabusData.filter(ch => {
+                if (currentPartFilter !== 'ALL' && ch.part !== currentPartFilter) return false;
+                
+                if (!searchQuery) return true;
+
+                // Search in chapter title or topic keywords
+                const inTitle = ch.title.toLowerCase().includes(searchQuery);
+                const inTopic = ch.topics.some(t => 
+                    t.name.toLowerCase().includes(searchQuery) ||
+                    t.summary.toLowerCase().includes(searchQuery) ||
+                    t.keywords.some(k => k.en.toLowerCase().includes(searchQuery) || k.vi.toLowerCase().includes(searchQuery))
+                );
+
+                return inTitle || inTopic;
+            });
+
+            if (filteredSyllabus.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12 bg-white rounded-3xl border-2 border-dashed border-pink-200 p-6 space-y-2">
+                        <div class="text-4xl">🐱</div>
+                        <p class="font-bold text-gray-600">Không tìm thấy Keyword nào phù hợp với "${searchQuery}"!</p>
+                        <p class="text-xs text-gray-400">Thử tìm từ khác như "Maslow", "STP", "CLV", "PLC" hay "Pricing" xem sao bấy bì!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filteredSyllabus.forEach(ch => {
+                const card = document.createElement('div');
+                const isKotler = ch.part === 'KOTLER';
+                const borderColor = isKotler ? 'border-pink-200 hover:border-pink-300' : 'border-purple-200 hover:border-purple-300';
+                const tagColor = isKotler ? 'bg-pink-100 text-pink-700 border-pink-300' : 'bg-purple-100 text-purple-700 border-purple-300';
+                const topicBg = isKotler ? 'bg-pink-50/50' : 'bg-purple-50/50';
+
+                let topicsHTML = ch.topics.map(t => {
+                    let keywordsHTML = t.keywords.map(k => `
+                        <div class="p-2.5 bg-white rounded-xl border border-gray-100 shadow-2xs space-y-1">
+                            <div class="text-xs font-bold text-gray-800 flex items-start gap-1.5">
+                                <span class="text-pink-400 mt-0.5"><i class="fa-solid fa-key"></i></span>
+                                <span>${k.en}</span>
+                            </div>
+                            <div class="text-xs text-purple-600 font-semibold pl-4 flex items-center gap-1">
+                                <span>👉</span> <span>${k.vi}</span>
+                            </div>
+                        </div>
+                    `).join('');
+
+                    return `
+                        <div class="p-3.5 ${topicBg} rounded-2xl border border-gray-100 space-y-2">
+                            <h4 class="font-bold text-xs md:text-sm text-gray-800 flex items-center justify-between">
+                                <span>📌 ${t.name}</span>
+                            </h4>
+                            <p class="text-xs text-gray-500 italic">${t.summary}</p>
+                            <div class="space-y-2 pt-1">
+                                ${keywordsHTML}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                card.className = `bg-white rounded-3xl border-3 ${borderColor} p-5 shadow-sm space-y-4 transition-all duration-200 hover:-translate-y-1`;
+                card.id = `chapter-${ch.id}`;
+                card.innerHTML = `
+                    <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-2xl">${ch.icon}</span>
+                            <div>
+                                <h3 class="font-bold text-base text-gray-800 font-cute">${ch.title}</h3>
+                                <span class="text-2xs font-bold px-2 py-0.5 rounded-md border ${tagColor}">
+                                    ${isKotler ? '🟢 MARKETING (KOTLER)' : '🔵 MANAGEMENT (GRIFFIN)'}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        ${topicsHTML}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            renderChapterPills();
+        }
+
+        function renderChapterPills() {
+            const pillsContainer = document.getElementById('chapterPills');
+            pillsContainer.innerHTML = '<span class="text-gray-400 font-bold mr-1">Chương:</span>';
+
+            syllabusData.forEach(ch => {
+                const btn = document.createElement('button');
+                btn.className = "px-2.5 py-1 bg-white border border-pink-200 hover:bg-pink-100 text-pink-700 rounded-xl text-2xs font-bold whitespace-nowrap transition-all";
+                btn.innerText = `Ch ${ch.chapterNum}`;
+                btn.onclick = () => {
+                    const el = document.getElementById(`chapter-${ch.id}`);
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                };
+                pillsContainer.appendChild(btn);
+            });
+        }
+
+        /* ========================================================================== */
+        /* 6. FLASHCARDS ENGINE                                                      */
+        /* ========================================================================== */
+        function initFlashcards() {
+            flashcardDeck = [];
+            syllabusData.forEach(ch => {
+                ch.topics.forEach(t => {
+                    t.keywords.forEach(k => {
+                        flashcardDeck.push({
+                            chapterTag: `${ch.part === 'KOTLER' ? '🟢 KOTLER' : '🔵 GRIFFIN'} - CH ${ch.chapterNum}`,
+                            front: k.en,
+                            backTitle: k.vi,
+                            backDesc: `Chủ đề: ${t.name} (${t.summary})`
+                        });
+                    });
+                });
+            });
+            
+            currentFcIndex = 0;
+            isFcFlipped = false;
+            renderCurrentFlashcard();
+        }
+
+        function shuffleFlashcards() {
+            for (let i = flashcardDeck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [flashcardDeck[i], flashcardDeck[j]] = [flashcardDeck[j], flashcardDeck[i]];
+            }
+            currentFcIndex = 0;
+            isFcFlipped = false;
+            playCuteSound('flip');
+            renderCurrentFlashcard();
+        }
+
+        function renderCurrentFlashcard() {
+            const cardInner = document.getElementById('flashcardInner');
+            
+            // Reset Flip State
+            if (isFcFlipped) {
+                cardInner.classList.remove('rotate-y-180');
+                isFcFlipped = false;
+            }
+
+            const currentData = flashcardDeck[currentFcIndex];
+            if (!currentData) return;
+
+            document.getElementById('flashcardCounter').innerText = `Card ${currentFcIndex + 1} / ${flashcardDeck.length}`;
+            document.getElementById('fcChapterTag').innerText = currentData.chapterTag;
+            document.getElementById('fcFrontText').innerText = `"${currentData.front}"`;
+            document.getElementById('fcBackTitle').innerText = currentData.backTitle;
+            document.getElementById('fcBackDesc').innerText = currentData.backDesc;
+        }
+
+        function flipFlashcard() {
+            const cardInner = document.getElementById('flashcardInner');
+            isFcFlipped = !isFcFlipped;
+            playCuteSound('flip');
+            if (isFcFlipped) {
+                cardInner.classList.add('rotate-y-180');
+            } else {
+                cardInner.classList.remove('rotate-y-180');
+            }
+        }
+
+        function nextFlashcard() {
+            if (currentFcIndex < flashcardDeck.length - 1) {
+                currentFcIndex++;
+            } else {
+                currentFcIndex = 0; // loop back
+            }
+            renderCurrentFlashcard();
+        }
+
+        function prevFlashcard() {
+            if (currentFcIndex > 0) {
+                currentFcIndex--;
+            } else {
+                currentFcIndex = flashcardDeck.length - 1;
+            }
+            renderCurrentFlashcard();
+        }
+
+        /* ========================================================================== */
+        /* 7. QUIZ ARENA ENGINE                                                      */
+        /* ========================================================================== */
+        function renderQuizQuestion() {
+            const q = quizBank[currentQuizIndex];
+            
+            document.getElementById('quizQuestionNum').innerText = `Câu ${currentQuizIndex + 1} / ${quizBank.length}`;
+            document.getElementById('quizCatTag').innerText = q.category;
+            document.getElementById('quizQuestionText').innerText = q.question;
+
+            const optionsList = document.getElementById('quizOptionsList');
+            optionsList.innerHTML = '';
+            
+            // Hide explanation & Next Button
+            document.getElementById('quizExplanation').classList.add('hidden');
+            document.getElementById('nextQuizBtn').classList.add('hidden');
+            selectedOption = null;
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-3.5 bg-white border-2 border-yellow-200 hover:border-yellow-400 hover:bg-yellow-50/50 rounded-2xl font-semibold text-sm text-gray-700 transition-all flex items-center justify-between shadow-2xs";
+                btn.innerHTML = `
+                    <span class="flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-lg bg-yellow-100 border border-yellow-300 text-amber-800 text-xs font-bold flex items-center justify-center">${String.fromCharCode(65 + idx)}</span>
+                        <span>${opt}</span>
+                    </span>
+                    <i class="fa-regular fa-circle text-yellow-300 text-lg"></i>
+                `;
+                btn.onclick = () => handleSelectOption(idx);
+                optionsList.appendChild(btn);
+            });
+        }
+
+        function handleSelectOption(idx) {
+            if (selectedOption !== null) return; // Prevent double clicks
+            selectedOption = idx;
+
+            const q = quizBank[currentQuizIndex];
+            const isCorrect = idx === q.correct;
+            const optionsList = document.getElementById('quizOptionsList');
+            const buttons = optionsList.getElementsByTagName('button');
+
+            if (isCorrect) {
+                quizScore++;
+                playCuteSound('correct');
+                buttons[idx].className = "w-full text-left p-3.5 bg-green-100 border-2 border-green-400 text-green-800 font-bold rounded-2xl text-sm transition-all flex items-center justify-between shadow-sm";
+                buttons[idx].querySelector('i').className = "fa-solid fa-circle-check text-green-500 text-lg";
+            } else {
+                playCuteSound('wrong');
+                buttons[idx].className = "w-full text-left p-3.5 bg-red-100 border-2 border-red-300 text-red-700 font-bold rounded-2xl text-sm transition-all flex items-center justify-between shadow-sm";
+                buttons[idx].querySelector('i').className = "fa-solid fa-circle-xmark text-red-400 text-lg";
+
+                // Highlight correct answer
+                buttons[q.correct].className = "w-full text-left p-3.5 bg-green-50 border-2 border-green-300 text-green-800 font-bold rounded-2xl text-sm transition-all flex items-center justify-between";
+            }
+
+            // Show explanation
+            const expBox = document.getElementById('quizExplanation');
+            const expTitle = document.getElementById('quizResultTitle');
+            const expText = document.getElementById('quizExplanationText');
+
+            if (isCorrect) {
+                expTitle.innerHTML = `<i class="fa-solid fa-circle-check text-green-500"></i> Chính xác rồi bấy bì! 🎯`;
+                expTitle.className = "flex items-center gap-2 font-bold text-xs text-green-600";
+            } else {
+                expTitle.innerHTML = `<i class="fa-solid fa-circle-xmark text-red-500"></i> Tiếc quá sai mất rùi! 🥺`;
+                expTitle.className = "flex items-center gap-2 font-bold text-xs text-red-600";
+            }
+            expText.innerText = q.explanation;
+            expBox.classList.remove('hidden');
+
+            // Update Header Score Badge
+            document.getElementById('quizScoreBadge').innerText = `${quizScore}/${quizBank.length}`;
+
+            // Show Next Button
+            document.getElementById('nextQuizBtn').classList.remove('hidden');
+        }
+
+        function nextQuizQuestion() {
+            if (currentQuizIndex < quizBank.length - 1) {
+                currentQuizIndex++;
+                renderQuizQuestion();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        function showQuizResult() {
+            document.getElementById('quizActiveArea').classList.add('hidden');
+            document.getElementById('quizHeader').classList.add('hidden');
+            
+            const resultArea = document.getElementById('quizResultArea');
+            document.getElementById('finalScoreDisplay').innerText = `${quizScore} / ${quizBank.length}`;
+            
+            const commentEl = document.getElementById('finalComment');
+            const pct = (quizScore / quizBank.length) * 100;
+            if (pct === 100) {
+                commentEl.innerText = "Bái phục! Bắt bài 100% Keyword thế này thì thi MKG101 10 điểm trong tầm tay!";
+            } else if (pct >= 70) {
+                commentEl.innerText = "Giỏi lắm bấy bì! Đã thuộc hầu hết các Keyword rồi đó! Ôn lại mấy câu sai rùi đi thi thôi!";
+            } else {
+                commentEl.innerText = "Không sao hết nè! Xem lại Cheat Sheet tầm 10 phút rùi thử làm lại Quiz nha!";
+            }
+
+            resultArea.classList.remove('hidden');
+        }
+
+        function restartQuiz() {
+            currentQuizIndex = 0;
+            quizScore = 0;
+            document.getElementById('quizScoreBadge').innerText = `0/${quizBank.length}`;
+            document.getElementById('quizResultArea').classList.add('hidden');
+            document.getElementById('quizHeader').classList.remove('hidden');
+            document.getElementById('quizActiveArea').classList.remove('hidden');
+            renderQuizQuestion();
+        }
+
+        /* ========================================================================== */
+        /* 8. INITIALIZATION ON PAGE LOAD                                            */
+        /* ========================================================================== */
+        window.onload = function() {
+            renderCheatSheet();
+            renderQuizQuestion();
+        };
+    </script>
+</body>
+</html>
